@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: notificationService
+
+  kafka:
+    consumer:
+      group-id: notificationGroup
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      auto-offset-reset: latest
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+    bootstrap-servers: ${HOST_IP_ADDRESS:localhost}:9092,${HOST_IP_ADDRESS:localhost}:9093,${HOST_IP_ADDRESS:localhost}:9094
+
+  mail:
+#    host: ${MAILSERVER_HOST}
+#    port: ${MAILSERVER_PORT}
+#    username: ${MAILSERVER_USER_NAME}
+#    password: ${MAILSERVER_PASSWORD}
+    host: smtp.gmail.com
+    port: 587
+    username: tpvinh292931@gmail.com
+    password: urcejfpvdjnzlvxs
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

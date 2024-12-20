@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: Statictis
+  server:
+    port: 8090
+    servlet:
+      context-path: /
+
+  datasource:
+    url: jdbc:h2:mem:kafka
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 123123
+  #    username: ${H2DATABASE_SERVERS_USERNAME}
+#    password: ${H2DATABASE_SERVERS_PASSWORD}
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  kafka:
+    bootstrap-servers: ${HOST_IP_ADDRESS:localhost}:9092,${HOST_IP_ADDRESS:localhost}:9093,${HOST_IP_ADDRESS:localhost}:9094
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      auto-offset-reset: earliest
+    listener:
+      ack-mode: record
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

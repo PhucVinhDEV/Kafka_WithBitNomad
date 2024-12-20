@@ -1,8 +1,8 @@
-package org.example.bitznomad.Service;
+package org.NotificationService.Service;
 
 import jakarta.mail.MessagingException;
 import lombok.extern.slf4j.Slf4j;
-import org.example.bitznomad.Model.MailInfo;
+import org.NotificationService.Model.MailInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

@@ -15,14 +15,49 @@
 
     <modules>
         <module>AccountService</module>
-        <module>notificationService</module>
+        <module>NotificationService</module>
         <module>StatictisService</module>
     </modules>
 
+    <!-- Define centralized versions -->
+    <properties>
+        <lombok.version>1.18.28</lombok.version>
+        <spring.kafka.version>3.2.3</spring.kafka.version>
+        <spring.web.version>3.3.4</spring.web.version>
+        <dotenv-java.version>3.1.0</dotenv-java.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring.kafka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.cdimascio</groupId>
+                <artifactId>dotenv-java</artifactId>
+                <version>3.1.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
 
 
     <build>

@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: "/"
+
+spring:
+
+#  profiles:
+#    active: ${SPRING_PROFILES_ACTIVE}  # Đọc từ biến môi trường
+  kafka:
+    bootstrap-servers: ${HOST_IP_ADDRESS:localhost}:9092,${HOST_IP_ADDRESS:localhost}:9093,${HOST_IP_ADDRESS:localhost}:9094  # Đọc từ biến môi trường
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: "-1"
+      retries: 3
+      properties:
+        request.timeout.ms: 5
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5

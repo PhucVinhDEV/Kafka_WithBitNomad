@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.3.4</version> <!-- Phiên bản Spring Boot bạn đang sử dụng -->
+        <relativePath/> <!-- Tìm parent từ repository -->
     </parent>
     <groupId>org.example</groupId>
     <artifactId>statictisService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Eureka</name>
     <description>Eureka</description>
     <url/>
@@ -66,12 +66,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.3.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 
@@ -80,7 +86,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.3.4</version> <!-- Đảm bảo chỉ định phiên bản -->
                 <configuration>
+                    <mainClass>org.example.statictisservice.StatictisApplication</mainClass> <!-- Đảm bảo đúng tên lớp -->
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>

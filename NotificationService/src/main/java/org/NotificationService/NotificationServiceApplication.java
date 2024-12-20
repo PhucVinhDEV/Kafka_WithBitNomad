@@ -1,4 +1,4 @@
-package org.example.bitznomad;
+package org.NotificationService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

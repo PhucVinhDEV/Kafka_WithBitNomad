@@ -60,34 +60,34 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
 ##   microservice
-  accountservice:
-    build:
-      context: ./AccountService # Đảm bảo đúng đường dẫn
-      dockerfile: Dockerfile
-    image: account-service
-    ports:
-      - 8080:8080
-    restart: on-failure
-    env_file:
-      - ./bitznomad.env
-
-
-  StaticsService:
-     build:
-       context: ./StatictisService
-       dockerfile: Dockerfile
-     image: statistic-service
-     ports:
-       - 8090:8090
-     restart: on-failure
-     env_file:
-       - ./bitznomad.env
-
-  notificationservice:
-     build:
-       context: ./NotificationService
-       dockerfile: Dockerfile
-     image: notification-service
-     restart: on-failure
-     env_file:
-       - bitznomad.env
+#  accountservice:
+#    build:
+#      context: ./AccountService # Đảm bảo đúng đường dẫn
+#      dockerfile: Dockerfile
+#    image: account-service
+#    ports:
+#      - 8080:8080
+#    restart: on-failure
+#    env_file:
+#      - ./bitznomad.env
+#
+#
+#  StaticsService:
+#     build:
+#       context: ./StatictisService
+#       dockerfile: Dockerfile
+#     image: statistic-service
+#     ports:
+#       - 8090:8090
+#     restart: on-failure
+#     env_file:
+#       - ./bitznomad.env
+#
+#  notificationservice:
+#     build:
+#       context: ./NotificationService
+#       dockerfile: Dockerfile
+#     image: notification-service
+#     restart: on-failure
+#     env_file:
+#       - bitznomad.env

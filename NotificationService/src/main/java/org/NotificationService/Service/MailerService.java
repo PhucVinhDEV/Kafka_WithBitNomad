@@ -1,7 +1,7 @@
-package org.example.bitznomad.Service;
+package org.NotificationService.Service;
 
 import jakarta.mail.MessagingException;
-import org.example.bitznomad.Model.MailInfo;
+import org.NotificationService.Model.MailInfo;
 
 public interface MailerService {
     /**

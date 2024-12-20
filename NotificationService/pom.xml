@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.3.4</version> <!-- Phiên bản Spring Boot bạn đang sử dụng -->
+        <relativePath/> <!-- Tìm parent từ repository -->
     </parent>
     <groupId>org.example</groupId>
     <artifactId>NotificationService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>notificationService</name>
+    <name>NotificationService</name>
     <description>notificationService</description>
     <url/>
     <licenses>
@@ -38,6 +38,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.3.4</version>
             <scope>test</scope>
         </dependency>
 <!--        <dependency>-->
@@ -64,6 +65,11 @@
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
@@ -74,6 +80,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.3.4</version>
+                <configuration>
+                    <mainClass>org.NotificationService.NotificationServiceApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

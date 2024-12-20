@@ -12,11 +12,16 @@
         <module name="AccountService" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kafka-with-bitnomad" target="1.5" />
+      <module name="NotificationService (1) (com.example)" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AccountService" options="-parameters" />
       <module name="NotificationService" options="-parameters" />
+      <module name="NotificationService (1) (com.example)" options="-parameters" />
       <module name="statictisService" options="-parameters" />
     </option>
   </component>
